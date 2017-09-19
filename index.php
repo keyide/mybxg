@@ -6,12 +6,10 @@
 
     //var_dump($path);
 
-
     $dir='main';
-    $fileName='index';
+    $fileName='login';
 
     if(array_key_exists('PATH_INFO',$_SERVER)){
-
         $path = $_SERVER['PATH_INFO'];
         $str=substr($path,1);
         $strArr=explode('/',$str);
@@ -21,8 +19,8 @@
         }else{
             $fileName='login';
         }
-
     }
-    include('/views/'.$dir.'/'.$fileName.'.html');
 
+    //var_dump('/views/'.$dir.'/'.$fileName.'.html');
+    include('./views/'.$dir.'/'.$fileName.'.html');
 ?>

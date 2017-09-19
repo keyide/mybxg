@@ -35,6 +35,7 @@
 
 <script src="/public/assets/jquery/jquery.min.js"></script>
 <script src="/public/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/public/assets/jquery-cookie/jquery.cookie.js"></script>
 <script>
   $("#loginBtn").on('click',function () {
     $.ajax({
@@ -44,13 +45,13 @@
       dataType:'json',
       success:function (data) {
         if(data.code==200){
+          $.cookie('loginInfo',JSON.stringify(data.result),{path:'/'});
+
           location.href='index';
         }
-      },
-      error:function (data) {
-        console.log(data);
       }
     });
+
     return false;
   });
 </script>
