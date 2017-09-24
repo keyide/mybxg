@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>学IT - 后台管理系统</title>
-  <link rel="stylesheet" href="/public/assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/public/assets/font-awesome/css/font-awesome.css">
-  <link rel="stylesheet" href="/public/assets/nprogress/nprogress.css">
-  <link rel="stylesheet" href="/public/less/index.css">
+  <?php include('/views/common/css.html'); ?>
 </head>
 <body>
 <!-- 登录 -->
@@ -36,6 +33,11 @@
 <script src="/public/assets/jquery/jquery.min.js"></script>
 <script src="/public/assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="/public/assets/jquery-cookie/jquery.cookie.js"></script>
+
+<script src="/public/assets/require/require.js"></script>
+<!--<script>-->
+  <!--require(['../../public/js/login.js']);-->
+<!--</script>-->
 <script>
   $("#loginBtn").on('click',function () {
     $.ajax({
@@ -47,7 +49,7 @@
         if(data.code==200){
           $.cookie('loginInfo',JSON.stringify(data.result),{path:'/'});
 
-          location.href='index';
+          location.href='/main/index';
         }
       }
     });

@@ -1,5 +1,5 @@
 <?php
-    header('content-type:text/html; charset=utf8;');
+    //header('content-type:text/html; charset=utf8;');
 
     //echo '<div>123</div>';
     //include('/views/main/login.html');
@@ -7,7 +7,7 @@
     //var_dump($path);
 
     $dir='main';
-    $fileName='login';
+    $fileName='index';
 
     if(array_key_exists('PATH_INFO',$_SERVER)){
         $path = $_SERVER['PATH_INFO'];
