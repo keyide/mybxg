@@ -11,12 +11,22 @@ require.config({
     validate:'validate-master/jquery-validate',
     form:'form-master/jquery.form',
     uploadify:'uploadify/jquery.uploadify.min',
+    cdeditor:'ckeditor/ckeditor',
     region:'jquery-region/jquery.region',
+    Jcrop:'Jcrop/js/Jcrop',
     common:'../js/common',
     //login:'../js/login',
+    index:'../js/index',
     teacherList:'../js/teacher-list',
     teacherAdd:'../js/teacher-add',
-    settings:'../js/settings'
+    utils:'../js/utils',
+    settings:'../js/settings',
+    courseList:'../js/course_list',
+    courseAdd:'../js/course_add',
+    courseBasic:'../js/course_basic',
+    coursePicture:'../js/course_picture',
+    courseLesson:'../js/course_lesson',
+    echarts:'echarts/echarts.min'
   },
   shim: {
     bootstrap:{
@@ -36,6 +46,16 @@ require.config({
     },
     region:{
       deps : ['jquery']
+    },
+    cdeditor:{
+      exports:'CKEDITOR'
+    },
+    Jcrop:{
+      deps : ['jquery']
+    },
+    echarts:{
+      deps : ['jquery']
     }
+
   }
 });

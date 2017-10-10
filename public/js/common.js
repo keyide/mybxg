@@ -1,6 +1,9 @@
-define(['jquery','cookie'],function ($) {
+define(['jquery','utils','cookie'],function ($,utils) {
   //NProgress.start();
   //NProgress.done();
+
+  console.log(location.pathname);
+  utils.setMenu(location.pathname);
 
   //控制左侧菜单的折叠和展开
   $('.navs ul').prev('a').on('click', function () {
@@ -39,6 +42,17 @@ define(['jquery','cookie'],function ($) {
   //console.log(imgSrc);
   $(".profile >h4").html(userName);
   $("#imgRander").attr('src',imgSrc);
+
+
+  //  遮罩层效果
+  $(document).ajaxStart(function () {
+    $(".overlay").show();
+  });
+  $(document).ajaxStop(function () {
+    setTimeout(function () {
+      $(".overlay").hide();
+    }, 200);
+  });
 
 });
 

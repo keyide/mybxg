@@ -17,6 +17,7 @@
             $dir=$strArr[0];
             $fileName=$strArr[1];
         }else{
+
             $fileName='login';
         }
     }

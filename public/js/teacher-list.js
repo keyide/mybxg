@@ -1,4 +1,7 @@
-define(['jquery','template','bootstrap'],function ($,template) {
+define(['jquery','template','utils','bootstrap'],function ($,template,utils) {
+
+  utils.setMenu(location.pathname);
+
   $.ajax({
     type:'get',
     url:'/api/teacher',

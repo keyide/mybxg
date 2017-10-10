@@ -1,24 +1,10 @@
-define(['jquery','template','datepicker','language','validate','form'],function ($,template) {
+define(['jquery','template','utils','datepicker','language','validate','form'],function ($,template,utils) {
 
-  //获取url数据
-  function getUrl(key) {
-    var one=location.search.substr(1); //tc_id=2&abc=123
-    if(one){
-      var two=one.split("&"); // ["tc_id=2","abc=123"]
-      var res=null;
-      two.forEach(function (item,i) {
-        var val=item.split("="); // ["tc_id","2"]
-        if(key==val[0]){
-          res=val[1];
-          return false;
-        }
-      });
-      return res;
-    }
-  }
-  //console.log(getUrl("tc_id"));
+  utils.setMenu('/teacher/teacher_list');
+  //console.log(location.pathname);
 
-  var tc_id=getUrl("tc_id");
+  console.log(utils.getUrl("tc_id"));
+  var tc_id=utils.getUrl("tc_id");
   //console.log(tc_id);
   if(tc_id){
     $.ajax({
@@ -62,7 +48,6 @@ define(['jquery','template','datepicker','language','validate','form'],function 
 
 
   function submitForm(url) {
-
     $("#teacherAddForm").validate({
       sendForm:false, // 限制默认提交刷新
       valid:function () {
